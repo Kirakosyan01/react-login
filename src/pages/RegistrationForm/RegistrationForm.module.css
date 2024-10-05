@@ -1,0 +1,98 @@
+.registration_form {
+  border: 1px solid #cecece;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 100px;
+  margin: 30px 100px 100px 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.bg_img {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.registration_input {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+h1 {
+  color: #274db0;
+  margin-bottom: 18px;
+}
+.fname {
+  display: flex;
+  width: 100%;
+  column-gap: 15px;
+}
+.password__div {
+  width: 100%;
+  position: relative;
+}
+.EyeSVG {
+  position: absolute;
+  transform: translateX(-140%) translateY(15%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+input {
+  width: 100%;
+  padding: 12px 17px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  border: 1px solid #c9c8c8;
+  background-color: #f3f5f7;
+}
+span {
+  color: #839cf8;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.have__acc {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 20px;
+  button {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    max-width: 220px;
+    padding: 13px 15px;
+    cursor: pointer;
+    border: 1px solid #274db0;
+  }
+  button:first-child {
+    color: #fff;
+    background-color: #3456ac;
+    &:hover {
+      background-color: #4768df;
+    }
+  }
+  button:nth-child(2) {
+    background-color: #fff;
+    color: #274db0;
+  }
+}
+.privacy {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  input {
+    width: 25px;
+    cursor: pointer;
+    margin-right: 25px;
+  }
+}

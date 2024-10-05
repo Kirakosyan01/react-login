@@ -1,0 +1,141 @@
+.profile_page {
+  display: flex;
+  justify-content: center;
+  background-color: #ff8fcf;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  .profile_info {
+    position: fixed;
+    max-width: 750px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    right: 7%;
+    border-top: 3px solid #000;
+    top: 28%;
+  }
+  .astro {
+    position: absolute;
+    top: -149px;
+    left: -100px;
+    width: 200px;
+  }
+  .profile_main {
+    padding: 15px;
+    position: fixed;
+    top: 20%;
+    left: 13%;
+    img {
+      border-radius: 50%;
+    }
+    h3 {
+      font-size: 21px;
+      font-weight: 500;
+    }
+  }
+}
+.user_elements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  column-gap: 10px;
+  margin-bottom: 5px;
+  div:first-child {
+    font-weight: 500;
+  }
+  div:nth-child(2) {
+    padding: 10px 15px;
+    width: 100%;
+    color: #504f4f;
+    text-align: left;
+    margin-top: 8px;
+    border: 1px solid #dddddd;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  input {
+    background-color: #fff;
+    margin-top: 5px;
+    border: none;
+  }
+}
+.passBtn {
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  margin-top: 8px;
+  max-width: 350px;
+}
+.div_1 {
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+}
+.div_2 {
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+.EyeSVG {
+  position: absolute;
+  transform: translateX(-140%) translateY(150%);
+  background-color: transparent;
+  right: 46%;
+  top: 65%;
+  border: none;
+  cursor: pointer;
+}
+.exit_div {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+
+  button {
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 3px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #f58864;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #ef4f6d;
+    }
+  }
+}
+.delete_btn {
+  margin-left: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background-color: #fec9d3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background-color: red;
+  }
+}
+.update_btn {
+  margin-left: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background-color: #f0f0f0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background-color: rgb(207, 206, 206);
+  }
+}

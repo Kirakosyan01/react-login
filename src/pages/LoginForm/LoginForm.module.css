@@ -1,0 +1,71 @@
+.login__form {
+  border: 1px solid #cecece;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 186px 100px;
+  margin: 30px 100px 100px 100px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  align-items: center;
+  position: relative;
+}
+.login_input {
+  width: 100%;
+  max-width: 400px;
+}
+.bg_img {
+  position: absolute;
+  top: 23%;
+  left: 15%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.login_input {
+  max-width: 400px;
+}
+.log_in {
+  color: #1f1c80;
+}
+.EyeSVG {
+  position: absolute;
+  transform: translateX(-140%) translateY(15%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.have__acc {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 20px;
+  column-gap: 25px;
+  button {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    max-width: 220px;
+    padding: 13px 15px;
+    cursor: pointer;
+    border: 1px solid #274db0;
+  }
+  button:first-child {
+    color: #fff;
+    background-color: #3456ac;
+    &:hover {
+      background-color: #4768df;
+    }
+  }
+  button:nth-child(2) {
+    background-color: #fff;
+    color: #274db0;
+  }
+}
+.notFound {
+  color: red;
+  a {
+    text-decoration: none;
+    color: #816eff;
+  }
+}
