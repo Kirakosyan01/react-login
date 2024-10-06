@@ -14,9 +14,10 @@
   max-width: 400px;
 }
 .bg_img {
-  position: absolute;
-  top: 23%;
+  top: 10%;
   left: 15%;
+  position: absolute;
+  width: 500px;
 }
 .form {
   display: flex;

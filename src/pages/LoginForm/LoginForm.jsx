@@ -1,9 +1,10 @@
 import style from "./LoginForm.module.css";
 import { useEffect, useState } from "react";
-import BgImg from "../../images/login_png.webp";
 import { useNavigate, useLocation } from "react-router-dom";
 import { EyeSVG } from "../../Components/EyeSVG";
 import { LoginNotCorrect } from "../../Components/LoginNotCorrect";
+import Lottie from "lottie-react";
+import animationData from "../../assets/Animation - 1728211799876.json";
 
 export function LoginForm() {
   const navigate = useNavigate();
@@ -36,27 +37,31 @@ export function LoginForm() {
       } else {
         setErrorLogin(true);
       }
-    } 
-    else if (location.state && typeof location.state === 'object') {
+    } else if (location.state && typeof location.state === "object") {
       const user = location.state;
-      if (user.email === userLogin.email && user.password === userLogin.password) {
+      if (
+        user.email === userLogin.email &&
+        user.password === userLogin.password
+      ) {
         setErrorLogin(false);
         navigate("/profile", { state: { user, allUsers: location.state } });
       } else {
         setErrorLogin(true);
       }
-    } 
-    else {
+    } else {
       setErrorLogin(true);
     }
   };
 
   const handleGoToRegistration = () => {
-    navigate("/registration", {state: location.state});
+    navigate("/registration", { state: location.state });
   };
 
   return (
     <div className={style.login__form}>
+      <div className={style.bg_img}>
+        <Lottie animationData={animationData} />
+      </div>
       <div className={style.login_input}>
         <h1 className={style.log_in}>Log In</h1>
         <div className={style.login_input}>
@@ -84,9 +89,6 @@ export function LoginForm() {
             </div>
           </form>
         </div>
-      </div>
-      <div className={style.bg_img}>
-        <img src={BgImg} alt="" />
       </div>
       <div></div>
     </div>

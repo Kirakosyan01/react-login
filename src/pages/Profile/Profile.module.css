@@ -1,36 +1,28 @@
 .profile_page {
   display: flex;
-  justify-content: center;
-  background-color: #ff8fcf;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  padding: 30px;
-  position: relative;
+  height: 70vh;
   .profile_info {
-    position: fixed;
     max-width: 750px;
     width: 100%;
     padding: 20px;
     display: flex;
-    right: 7%;
-    border-top: 3px solid #000;
-    top: 28%;
+    border-top: 1px solid #000;
   }
-  .astro {
+  .leftSideAnimation{
+    width: 100%;
     position: absolute;
-    top: -149px;
-    left: -100px;
-    width: 200px;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+  }
+  .profileAnimation{
+    width: 500px;
   }
   .profile_main {
     padding: 15px;
-    position: fixed;
-    top: 20%;
-    left: 13%;
-    img {
-      border-radius: 50%;
-    }
     h3 {
       font-size: 21px;
       font-weight: 500;
@@ -92,8 +84,8 @@
 }
 .exit_div {
   position: absolute;
-  top: 15%;
-  right: 3%;
+  top: 1%;
+  right: 1%;
 
   button {
     font-size: 16px;
@@ -104,7 +96,7 @@
     padding: 3px;
     padding: 10px 15px;
     border-radius: 6px;
-    background-color: #f58864;
+    background-color: #861744;
     transition: all 0.2s ease-in-out;
     &:hover {
       background-color: #ef4f6d;

@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import style from "./Profile.module.css";
 import { useEffect, useState } from "react";
-import userProfile from "../../images/userProfile.avif";
 import { EyeSVG } from "../../Components/EyeSVG.jsx";
-import astro from "../../images/illustrations_astronaut_kevin.png";
 import { IsDelete } from "../../Components/IsDelete/IsDelete.jsx";
 import { EditForm } from "../../Components/EditForm/EditForm.jsx";
 import { IsExit } from "../../Components/IsExit/IsExit.jsx";
+import Lottie from "lottie-react";
+import animationData from '../../assets/Animation - 1728214432650.json';
+import leftSideAnimation from '../../assets/Animation - 1728220619356.json';
 
 export function Profile() {
   const [showPassword, setShowPassword] = useState(false);
@@ -88,18 +89,22 @@ export function Profile() {
           handleEditUpdate={handleEditUpdate}
         />
       ) : null}
+      <div className={style.leftSideAnimation}>
+        <Lottie animationData={leftSideAnimation} />
+      </div>
       <div className={style.exit_div}>
         <button onClick={handleIsExit} type="button">
-          Log Out
+          Sign Out
         </button>
       </div>
       <div className={style.profile_main}>
-        <img src={userProfile} width={300} alt="" />
+        <div className={style.profileAnimation}>
+        <Lottie animationData={animationData}/>
+        </div>
         <h3>{user && user.fname}</h3>
         <h3>{user && user.sname}</h3>
       </div>
       <div className={style.profile_info}>
-        <img src={astro} className={style.astro} alt="" />
         <div className={style.div_2}>
           <div className={style.div_2}>
             <div></div>
