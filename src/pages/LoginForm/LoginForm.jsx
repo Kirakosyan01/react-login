@@ -5,6 +5,7 @@ import { EyeSVG } from "../../Components/EyeSVG";
 import { LoginNotCorrect } from "../../Components/LoginNotCorrect";
 import Lottie from "lottie-react";
 import animationData from "../../assets/Animation - 1728211799876.json";
+import AnimatedPage from "../AnimatedPage/AnimatedPage";
 
 export function LoginForm() {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ export function LoginForm() {
   };
 
   return (
+    <AnimatedPage>
     <div className={style.login__form}>
       <div className={style.bg_img}>
         <Lottie animationData={animationData} />
@@ -90,7 +92,7 @@ export function LoginForm() {
           </form>
         </div>
       </div>
-      <div></div>
     </div>
+    </AnimatedPage>
   );
 }

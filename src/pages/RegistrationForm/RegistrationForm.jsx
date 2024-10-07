@@ -1,10 +1,10 @@
 import style from "./RegistrationForm.module.css";
-import BgImg from "../../images/regist_png.avif";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { EyeSVG } from "../../Components/EyeSVG";
 import Lottie from "lottie-react";
 import animationData from '../../assets/Animation - 1728213938956.json';
+import AnimatedPage from "../AnimatedPage/AnimatedPage";
 
 export function RegistrationForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,6 +41,7 @@ export function RegistrationForm() {
   };
 
   return (
+    <AnimatedPage>
     <div className={style.registration_form}>
       <div className={style.bg_img}>
         <Lottie animationData={animationData}/>
@@ -98,5 +99,6 @@ export function RegistrationForm() {
         </form>
       </div>
     </div>
+    </AnimatedPage>
   );
 } 

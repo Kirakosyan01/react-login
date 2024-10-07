@@ -8,12 +8,15 @@ import { IsExit } from "../../Components/IsExit/IsExit.jsx";
 import Lottie from "lottie-react";
 import animationData from '../../assets/Animation - 1728214432650.json';
 import leftSideAnimation from '../../assets/Animation - 1728220619356.json';
+import AnimatedPage from "../AnimatedPage/AnimatedPage.jsx";
+import { NightMode } from "../../Components/NightMode/NightMode.jsx";
 
 export function Profile() {
   const [showPassword, setShowPassword] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [isExit, setIsExit] = useState(false);
+  const [nightToggled, setNightToggled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -75,7 +78,8 @@ export function Profile() {
   }
 
   return (
-    <div className={style.profile_page}>
+    <AnimatedPage>
+    <div className={nightToggled ? style.profile_page_dark : style.profile_page}>
       {isExit ? (
         <IsExit handleSignOut={handleSignOut} handleIsExitCancel={handleIsExitCancel}/>
       ) : null}
@@ -92,7 +96,8 @@ export function Profile() {
       <div className={style.leftSideAnimation}>
         <Lottie animationData={leftSideAnimation} />
       </div>
-      <div className={style.exit_div}>
+      <div className={nightToggled ? style.exit_div_dark :style.exit_div}>
+      <NightMode nightToggled={nightToggled} setNightToggled={setNightToggled}/>
         <button onClick={handleIsExit} type="button">
           Sign Out
         </button>
@@ -101,36 +106,35 @@ export function Profile() {
         <div className={style.profileAnimation}>
         <Lottie animationData={animationData}/>
         </div>
-        <h3>{user && user.fname}</h3>
-        <h3>{user && user.sname}</h3>
+        <h3 className={!nightToggled ? '' : style.name_dark}>{user && user.fname}</h3>
+        <h3 className={!nightToggled ? '' : style.name_dark}>{user && user.sname}</h3>
       </div>
-      <div className={style.profile_info}>
+      <div className={nightToggled ? style.profile_info_dark : style.profile_info}>
         <div className={style.div_2}>
           <div className={style.div_2}>
-            <div></div>
             <div className={style.div_2}>
               <div className={style.div_1}>
                 <div className={style.user_elements}>
-                  <div>First Name:</div>
+                  <div className={!nightToggled ? '' : style.name_dark}>First Name:</div>
                   <div>{user.fname}</div>
                 </div>
                 <div className={style.user_elements}>
-                  <div>Second Name:</div>
+                  <div className={!nightToggled ? '' : style.name_dark}>Second Name:</div>
                   <div>{user && user.sname}</div>
                 </div>
               </div>
               <div className={style.div_1}>
                 <div className={style.user_elements}>
-                  <div>Email:</div>
+                  <div className={!nightToggled ? '' : style.name_dark}>Email:</div>
                   <div>{user && user.email}</div>
                 </div>
                 <div className={style.user_elements}>
-                  <div>Phone:</div>
+                  <div className={!nightToggled ? '' : style.name_dark}>Phone:</div>
                   <div>{user && user.phone}</div>
                 </div>
               </div>
               <div className={style.user_element}>
-                <div>Password:</div>
+                <div className={!nightToggled ? '' : style.name_dark}>Password:</div>
                 <div className={style.EyeSVG_div}>
                   <button
                     type="button"
@@ -144,18 +148,18 @@ export function Profile() {
                     type={showPassword ? "text" : "password"}
                     value={user && user.password}
                   />
+                                    <button
+                    onClick={handleIsEditing}
+                    className={style.update_btn}
+                  >
+                    Update
+                  </button>
                   <button
                     type="button"
                     className={style.delete_btn}
                     onClick={handleIsDelete}
                   >
                     Delete Account
-                  </button>
-                  <button
-                    onClick={handleIsEditing}
-                    className={style.update_btn}
-                  >
-                    Update
                   </button>
                 </div>
               </div>
@@ -164,5 +168,6 @@ export function Profile() {
         </div>
       </div>
     </div>
+    </AnimatedPage>
   );
 }
